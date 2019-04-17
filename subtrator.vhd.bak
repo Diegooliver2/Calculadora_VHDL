@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Subtrator is
+port
+	(
+		Cisub, Asub, Bsub : in std_logic;
+		Cosub, Ssub    : out std_logic
+	);
+end Subtrator;
+ 
+architecture archSub of Subtrator is
+begin
+  Cosub <= ((not(Cisub) and not(Asub) and Bsub) or (Cisub and Asub) or (Cisub and Asub and Bsub));
+  Ssub <= ((not(Asub) and (Cisub nor Bsub)) or (Asub and(Cisub xnor Bsub)));
+end archSub;
+	

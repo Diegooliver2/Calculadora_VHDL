@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity maior is
+port
+	(
+		n1,n2 : in std_logic_vector(3 downto 0);
+		yma : out std_logic
+	);
+end menor;
+
+architecture archMaior of maior is
+begin
+
+	yma <= n1 and not(n2);
+	
+end archMaior;
